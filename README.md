@@ -38,3 +38,9 @@ Keep your Access Token private. If you share your spreadsheet with others, they 
 
 ## 📝 License
 MIT License - Feel free to use and modify!
+
+
+
+
+![Screenshot 2026-01-20 at 3 34 02 PM 00_00_00_00 Still001](https://github.com/user-attachments/assets/4c625503-27b4-426e-ad62-d88b2ac7768f)
+
