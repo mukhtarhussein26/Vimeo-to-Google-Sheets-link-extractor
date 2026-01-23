@@ -35,7 +35,12 @@ An all in- ne Google Apps Script tool to manage Vimeo libraries via Google Sheet
 4. **Monitor:** Watch the "Thumbnail Status" column for results.
 
 ## ⚠️ Security Note
-Never share your Google Sheet or GitHub code with your actual Token or Drive ID included. Always use placeholders when sharing.
+Never share your Google Sheet or GitHub c<img width="2028" height="1378" alt="Screenshot 2026-01-23 at 11 00 38 AM 00_00_01_16 Still001" src="https://github.com/user-attachments/assets/9acea340-a01e-4c43-81f2-23df638c8d91" />
+ode with your actual Token or Drive ID included. Always use placeholders when sharing.
 
 ## 📝 License
 MIT
+
+![Uploading Screenshot 2026-01-23 at 11.00.38 AM.00_00_01_16.Still001.png…]()
+
+
