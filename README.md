@@ -1,46 +1,41 @@
-# Vimeo-to-Google-Sheets-extractor
-This tool extracts  videos source links from a given library or a specific folder in Vimeo platform, and pastes it to a Google sheets document. This tool that connects to the Vimeo API to fetch video source links, IDs, and upload dates directly into your Google Spreadsheet.  
+# Vimeo Video Manager: Link Extractor & Thumbnail Uploader
 
+An all in- ne Google Apps Script tool to manage Vimeo libraries via Google Sheets. This tool not only extracts video data but also automates the process of uploading thumbnails from Google Drive.
 
-## 🚀 Features
-- **Folder Selection:** Choose a specific Vimeo project/folder to extract from.
-- **Bulk Extraction:** Extract every video from your entire Vimeo library at once.
-- **Custom Menu:** Adds a "Vimeo Tools" menu directly to your Google Sheets UI for easy access.
-- **Automated Formatting:** Automatically sets up headers, bolds them, and adjusts column widths.
-- **Data Extracted:** Folder Name, Video Title, Video ID, Player URL, and Upload Date.
+## 🚀 New Features
+- **Thumbnail Automation:** Automatically matches image files in a Google Drive folder to video titles in your sheet and uploads them to Vimeo.
+- **Intelligent Matching:** Matches names case-insensitively and ignores file extensions (e.g., `Video_01.mp4` matches `Video_01.jpg`).
+- **Status Tracking:** Provides real-time feedback in the spreadsheet (⏳ Uploading, ✅ Success, ❌ Error).
+- **Expanded Extraction:** Handles pagination better for large video libraries.
 
 ## 🛠️ Setup Instructions
 
-### 1. Get a Vimeo Access Token
+### 1. Vimeo API Configuration
 1. Go to the [Vimeo Developer Portal](https://developer.vimeo.com/apps).
-2. Create a new app.
-3. Generate a **Personal Access Token** with `Public` and `Private` scopes.
+2. **Important:** Your Access Token now needs the following scopes: `Public`, `Private`, `Edit`, and `Upload`.
+3. Generate the token and keep it ready.
 
-### 2. Set up the Google Sheet
-1. Create a new [Google Sheet](https://sheets.new).
-2. Go to **Extensions** > **Apps Script**.
-3. Delete any code in the editor and paste the code from `Code.gs` in this repository.
-4. Replace `YOUR_VIMEO_ACCESS_TOKEN_HERE` (line 5) with the token you generated in Step 1.
-5. Save the project (click the disk icon) and name it "Vimeo Extractor".
+### 2. Google Drive Configuration
+1. Create a folder in Google Drive and upload your thumbnail images.
+2. Ensure the image filenames match your Vimeo video titles (e.g., Video Title: "Intro", Image: "Intro.png").
+3. Copy the **Folder ID** from the URL (the string of characters after `/folders/`).
 
-### 3. Run the Script
-1. Refresh your Google Sheet.
-2. A new menu item **"Vimeo Tools"** will appear in the top toolbar.
-3. Click it and select **"Extract from Specific Folder"** or **"Extract All Videos"**.
-4. Authorize the script when prompted by Google.
+### 3. Script Installation
+1. Open a Google Sheet and go to **Extensions** > **Apps Script**.
+2. Paste the code from `Code.gs`.
+3. Replace the placeholders at the top:
+   - `VIMEO_ACCESS_TOKEN`: Your generated token.
+   - `DRIVE_FOLDER_ID`: The ID of your Google Drive thumbnail folder.
+4. Save and refresh your spreadsheet.
 
-## 📸 Preview
-The script creates a custom menu like this:
-`Vimeo Tools > 📁 Extract from Specific Folder`
+## 📁 How to Use
+1. **Extract:** Click `Vimeo Tools > 📁 Extract from Specific Folder`.
+2. **Review:** Ensure the "Video Title" column matches your image names in Drive.
+3. **Upload:** Click `Vimeo Tools > 🖼️ Upload Thumbnails from Drive`.
+4. **Monitor:** Watch the "Thumbnail Status" column for results.
 
-## ⚠️ Important Note
-Keep your Access Token private. If you share your spreadsheet with others, they will be able to see your token in the Apps Script editor.
+## ⚠️ Security Note
+Never share your Google Sheet or GitHub code with your actual Token or Drive ID included. Always use placeholders when sharing.
 
 ## 📝 License
-MIT License - Feel free to use and modify!
-
-
-
-
-![Screenshot 2026-01-20 at 3 34 02 PM 00_00_00_00 Still001](https://github.com/user-attachments/assets/4c625503-27b4-426e-ad62-d88b2ac7768f)
-
+MIT
